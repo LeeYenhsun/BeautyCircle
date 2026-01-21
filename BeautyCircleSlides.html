@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美力圈 Beauty Circle - 提案簡報</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-gold: #E5B1A1;
+            --soft-cream: #F9F5F1;
+            --deep-gold: #C5A059;
+            --charcoal: #333333;
+        }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--soft-cream);
+            color: var(--charcoal);
+        }
+        h1, h2, h3 {
+            font-family: 'Noto Serif TC', serif;
+        }
+        .slide-container {
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+        .slide {
+            scroll-snap-align: start;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .bg-accent {
+            background-color: var(--rose-gold);
+        }
+        .text-gold {
+            color: var(--deep-gold);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+        .nav-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 50;
+        }
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            transition: all 0.3s;
+        }
+        .step-dot.active {
+            background: var(--deep-gold);
+            width: 30px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container" id="slider">
+    
+    <!-- Slide 1: 標題頁 -->
+    <section class="slide bg-white">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&q=80&w=2070" alt="Beauty Background" class="w-full h-full object-cover opacity-20">
+        </div>
+        <div class="relative z-10 max-w-4xl">
+            <h4 class="text-gold tracking-[0.5em] mb-4 font-bold">BEAUTY CIRCLE</h4>
+            <h1 class="text-6xl md:text-8xl mb-6 leading-tight">美力圈<br><span class="text-rose-400 font-light">職人數位長城</span></h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-xl">由公會引領，整合地理圍欄與誠信機制，守護職人尊嚴，鎖定商圈產值。</p>
+            <div class="w-24 h-1 bg-accent"></div>
+        </div>
+    </section>
+
+    <!-- Slide 2: 產業危機 -->
+    <section class="slide">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="glass-card">
+                <h2 class="text-4xl mb-6 text-gold">400 億產值的<br>數位隱形危機</h2>
+                <ul class="space-y-6 text-lg">
+                    <li class="flex items-start">
+                        <span class="mr-4 text-accent">✦</span>
+                        <p><strong>行銷通膨：</strong>廣告費暴漲 35%，微型店家無力負擔競爭成本。</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-4 text-accent">✦</span>
+                        <p><strong>產值浪費：</strong>平均 12% 的 No-show 率，讓店家每年損失逾 20 萬純利。</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-4 text-accent">✦</span>
+                        <p><strong>即興缺口：</strong>無法主動接觸門口 1 公里內的潛在客群。</p>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1787" class="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition duration-700" alt="Industry Pain">
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: 核心武器 -->
+    <section class="slide bg-white">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl mb-4">地理圍欄推播</h2>
+            <p class="text-gray-500">不再被動等待，主動攔截 1km 內的渴望</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-8 text-center bg-soft-cream rounded-2xl">
+                <div class="text-4xl mb-4">📍</div>
+                <h3 class="text-xl mb-2 font-bold">精準定位</h3>
+                <p class="text-gray-600 text-sm">背景偵測使用者位置，進入商圈立即啟動感應。</p>
+            </div>
+            <div class="p-8 text-center bg-rose-50 rounded-2xl border-2 border-rose-200">
+                <div class="text-4xl mb-4">🔔</div>
+                <h3 class="text-xl mb-2 font-bold text-rose-500">驚喜推播</h3>
+                <p class="text-gray-600 text-sm">鎖屏自動彈出優惠，創造 15% 以上的極高點擊率。</p>
+            </div>
+            <div class="p-8 text-center bg-soft-cream rounded-2xl">
+                <div class="text-4xl mb-4">✨</div>
+                <h3 class="text-xl mb-2 font-bold">即時轉換</h3>
+                <p class="text-gray-600 text-sm">引導路人轉變為即刻進店的消費者。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: 產值防禦 -->
+    <section class="slide">
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+            <div class="flex-1">
+                <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=1740" class="rounded-[40px] shadow-xl" alt="Slot Rescue">
+            </div>
+            <div class="flex-1 glass-card">
+                <h2 class="text-4xl mb-6 text-gold">補位快攻系統</h2>
+                <h3 class="text-2xl mb-4 font-light">撿回被放鳥的損失</h3>
+                <p class="mb-6 text-gray-600 leading-relaxed">
+                    遇到預約取消？店家端一鍵發布「即時空檔」，系統立即針對周邊 1km 發送通知。只要 30% 補位成功，每年幫您「撿回」 7 萬元的純利。
+                </p>
+                <div class="p-4 bg-white border-l-4 border-accent italic">
+                    「讓每一分鐘的職人時間，都不被白白浪費。」
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: 數位存摺 -->
+    <section class="slide bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-8">
+                <h2 class="text-4xl text-gold">數位儲值與折扣引擎</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center p-4 bg-soft-cream rounded-xl">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 text-xl">🛡️</div>
+                        <div>
+                            <h4 class="font-bold">公會見證：安全感轉化為信任</h4>
+                            <p class="text-xs text-gray-500">第三方雲端紀錄，消除對小店倒閉捲款的恐懼。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-soft-cream rounded-xl">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 text-xl">📈</div>
+                        <div>
+                            <h4 class="font-bold">折扣自動化</h4>
+                            <p class="text-xs text-gray-500">支援滿萬送千、套票管理，系統自動對帳。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-soft-cream rounded-xl">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 text-xl">📱</div>
+                        <div>
+                            <h4 class="font-bold">自動回訪提醒</h4>
+                            <p class="text-xs text-gray-500">偵測餘額久未異動，自動發送暖心問候。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <!-- 手機 Mockup 視覺感 -->
+                <div class="w-64 h-[500px] bg-gray-800 rounded-[3rem] mx-auto border-[8px] border-gray-900 shadow-2xl relative overflow-hidden">
+                    <div class="p-6 bg-white h-full">
+                        <div class="text-xs text-gray-400 mb-2">My Passbook</div>
+                        <div class="bg-accent p-4 rounded-xl text-white mb-4">
+                            <div class="text-[10px]">A 店 儲值餘額</div>
+                            <div class="text-2xl font-bold">$8,500</div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-[10px] font-bold">最近消費</div>
+                            <div class="flex justify-between text-[10px] border-b pb-1">
+                                <span>SPA 療程</span><span>-$1,500</span>
+                            </div>
+                        </div>
+                        <div class="mt-40 text-center">
+                            <div class="text-[10px] text-accent mb-2">公會認證存摺</div>
+                            <div class="w-10 h-10 border-2 border-accent rounded-full mx-auto flex items-center justify-center text-xs">✓</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: 防弊誘因 -->
+    <section class="slide">
+        <div class="glass-card max-w-5xl mx-auto">
+            <h2 class="text-center text-4xl mb-12">雙軌積分機制：防弊與導流</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-rose-400">美麗積分 (美麗金)</h3>
+                    <p class="text-sm text-gray-600 mb-4">為了賺取「跨店通用積分」，消費者會主動要求掃碼紀錄交易。這讓消費者成為公會的「免費查帳員」。</p>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-rose-300">
+                        <p class="text-xs">「老闆，我要掃碼拿美麗金去別家折抵！」</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-deep-gold">邀請碼好友圈</h3>
+                    <p class="text-sm text-gray-600 mb-4">不騷擾通訊錄，靠真實邀請建立品味圈。好友消費，我得獎勵；好友評價，我看得到。</p>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-deep-gold">
+                        <p class="text-xs">用真實口碑，鎖住商圈內的精準信任流。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: 商業模式 -->
+    <section class="slide bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl mb-6 text-gold">方案 B：公會領導分潤</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="font-bold text-accent">01</div>
+                        <p><strong>不碰金流：</strong>現金/刷卡直接進店家口袋，規避法律風險。</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="font-bold text-accent">02</div>
+                        <p><strong>月結分潤：</strong>平台出報表，公會向店家收取 5% 服務費。</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="font-bold text-accent">03</div>
+                        <p><strong>分潤對沖：</strong>商家收到的積分折抵，直接抵銷應繳給公會的服務費。公會出點數，商家出技術，共創商圈繁榮。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-soft-cream p-10 rounded-3xl">
+                <div class="text-center mb-6 font-bold text-gray-500">分潤流向圖</div>
+                <div class="flex justify-between items-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow text-xs">消費者</div>
+                    <div class="h-px bg-gray-300 flex-1 mx-2 relative">
+                        <span class="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px]">現金結帳</span>
+                    </div>
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow text-xs">店家</div>
+                </div>
+                <div class="flex justify-center my-4">
+                    <div class="w-px h-10 bg-gray-300"></div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="w-32 h-16 bg-rose-100 rounded-xl flex flex-col items-center justify-center shadow-inner">
+                        <span class="text-[10px]">公會 5% 分潤</span>
+                        <span class="text-[8px] text-gray-400">對沖積分支出</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: 誠信體系 -->
+    <section class="slide">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl mb-8">職人尊嚴：誠信預警系統</h2>
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecee?auto=format&fit=crop&q=80&w=1740" class="rounded-2xl opacity-40 h-80 w-full object-cover" alt="Security">
+                <div class="absolute inset-0 flex items-center justify-center gap-8">
+                    <div class="glass-card w-64">
+                        <h4 class="font-bold text-accent mb-2">商家分級</h4>
+                        <p class="text-xs">累積誠信數據，晉升黃金級解鎖進階特權。</p>
+                    </div>
+                    <div class="glass-card w-64 border-rose-300">
+                        <h4 class="font-bold text-rose-500 mb-2">風險標籤</h4>
+                        <p class="text-xs">去識別化預警慣性放鳥客，守護職人時間。</p>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-8 text-gray-500 text-sm">遵守個資法規範，由公會擔任產業仲裁者，建立誠信護城河。</p>
+        </div>
+    </section>
+
+    <!-- Slide 9: 循序漸進 -->
+    <section class="slide bg-white">
+        <h2 class="text-4xl text-center mb-16">三階段發展藍圖</h2>
+        <div class="flex flex-col md:flex-row justify-between gap-8">
+            <div class="flex-1 p-6 border-t-4 border-rose-200 bg-soft-cream">
+                <h4 class="font-bold mb-4">V1 生存期</h4>
+                <p class="text-sm text-gray-600 mb-4">補位快攻工具 + 儲值紀錄落地。解決放鳥痛點，收取建檔規費。</p>
+                <span class="px-3 py-1 bg-rose-200 text-[10px] rounded-full">建立流量</span>
+            </div>
+            <div class="flex-1 p-6 border-t-4 border-accent bg-soft-cream">
+                <h4 class="font-bold mb-4">V2 成長期</h4>
+                <p class="text-sm text-gray-600 mb-4">積分循環與月結分潤。建立商圈互助生態，實現穩定獲利。</p>
+                <span class="px-3 py-1 bg-accent text-[10px] text-white rounded-full">正式分潤</span>
+            </div>
+            <div class="flex-1 p-6 border-t-4 border-deep-gold bg-soft-cream">
+                <h4 class="font-bold mb-4">V3 穩定義</h4>
+                <p class="text-sm text-gray-600 mb-4">誠信護城河與大數據中心。掌握 B2B 廣告與產業話語權。</p>
+                <span class="px-3 py-1 bg-deep-gold text-[10px] text-white rounded-full">數據資產</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 10: 結論 -->
+    <section class="slide bg-accent">
+        <div class="text-center text-white">
+            <h4 class="tracking-widest mb-6">BEAUTY CIRCLE</h4>
+            <h2 class="text-5xl md:text-7xl mb-12">讓每一分鐘的專業<br>都值得被珍惜</h2>
+            <p class="text-xl opacity-80 max-w-2xl mx-auto mb-12 leading-loose">
+                這不僅是一個 App，而是公會送給會員的產值保險與行銷利器。讓我們共同開啟美業的數位大數據時代。
+            </p>
+            <div class="inline-block border-2 border-white px-12 py-4 rounded-full text-xl hover:bg-white hover:text-accent transition">啟動合作</div>
+        </div>
+    </section>
+
+</div>
+
+<!-- 導航指示 -->
+<div class="nav-btn" id="dot-container">
+    <div class="step-dot active"></div>
+    <div class="step-dot"></div>
+    <div class="step-dot"></div>
+    <div class="step-dot"></div>
+    <div class="step-dot"></div>
+    <div class="step-dot"></div>
+    <div class="step-dot"></div>
+    <div class="step-dot"></div>
+    <div class="step-dot"></div>
+    <div class="step-dot"></div>
+</div>
+
+<script>
+    const slider = document.getElementById('slider');
+    const dots = document.querySelectorAll('.step-dot');
+    
+    slider.addEventListener('scroll', () => {
+        const index = Math.round(slider.scrollTop / window.innerHeight);
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    });
+</script>
+
+</body>
+</html>
